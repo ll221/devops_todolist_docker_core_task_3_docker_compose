@@ -28,6 +28,12 @@ services:
     container_name: todoapp-container
     ports:
       - "8000:8000"
+    environment:
+      DB_HOST: mysql
+      DB_NAME: app_db
+      DB_USER: app_user
+      DB_PASSWORD: 1234
+      DB_PORT: 3306
     depends_on:
       mysql:
         condition: service_healthy
